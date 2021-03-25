@@ -1,7 +1,6 @@
 const crypto = require('crypto');
-const util = require('util');
 
-const randombytesAsync = util.promisify(crypto.randomBytes);
+const randombytesAsync = require('util').promisify(crypto.randomBytes);
 
 const sha512 = (v) =>
   crypto.createHash('sha512').update(v, 'utf-8').digest('hex');
