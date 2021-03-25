@@ -23,7 +23,7 @@ const verify = (hash, password) => {
 
   for (var i = 0; i < saltspace; i++) {
     const salt = i.toString(16);
-    if (parsedHash[2] == sha512(password + salt)) {
+    if (parsedHash[2] === sha512(password + salt)) {
       return true;
     }
   }
